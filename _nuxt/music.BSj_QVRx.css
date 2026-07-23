@@ -1,0 +1,1 @@
+.music-content[data-v-3cadf1d5]{position:relative;z-index:0}.music-content[data-v-3cadf1d5]:before{background-image:url(../images/music-notes-bg.svg);background-repeat:repeat;background-size:300px;content:"";inset:0;opacity:.1;pointer-events:none;position:fixed;transition:opacity .3s ease;z-index:-1}.v-theme--darkTheme .music-content[data-v-3cadf1d5]:before{opacity:.16}

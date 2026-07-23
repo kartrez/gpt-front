@@ -1,0 +1,1 @@
+import{_ as a,c as l,a as o,b as t,aO as r}from"./Du5L0U0B.js";const c={};function n(s,e){return o(),l("div",null,[e[0]||(e[0]=t("header",{class:"flex flex-col items-center bg-purple-900 py-2"},[t("h1",{class:"text-slate-200 text-xs"}," Mobile Layout ")],-1)),r(s.$slots,"default")])}const d=a(c,[["render",n]]);export{d as default};

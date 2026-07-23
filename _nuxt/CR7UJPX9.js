@@ -1,0 +1,1 @@
+import{u as t}from"./DnF7zMaF.js";class n{async create(e){return await t("/news",{method:"POST",body:e})}async delete(e){return await t(`/news/${e}`,{method:"DELETE"})}async list(){return await t("/news",{method:"GET"})}async get(e){return await t(`/news/${e}`,{method:"GET"})}async latest(){return await t("/news/latest",{method:"GET"})}}export{n as N};

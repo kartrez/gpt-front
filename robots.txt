@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://gpt-chat.by/sitemap-index.xml
+
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_nuxt/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_referer&utm_ya_campaign&yabizcmpgn&utm_candidate&ybaip&etext&cb&media_id&media_author_id&ranking_info_token&spm&recharge&v&_
