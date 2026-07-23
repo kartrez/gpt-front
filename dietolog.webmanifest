@@ -1,0 +1,38 @@
+{
+  "name": "AI-диетолог — калории и БЖУ",
+  "short_name": "AI-диетолог",
+  "description": "AI считает калории и БЖУ по описанию или фото блюда. Дневник питания и графики веса.",
+  "scope": "/dietolog",
+  "start_url": "/dietolog?view=app",
+  "id": "/dietolog?view=app",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#75ac9d",
+  "background_color": "#343541",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png?v=2",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

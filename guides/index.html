@@ -1,0 +1,567 @@
+<!DOCTYPE html><html  lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гайды и инструкции по GPT и нейросетям | GPT-Chat</title>
+<script src="https://telegram.org/js/telegram-widget.js?22" async defer></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=G-P06C2J3995" async></script>
+<style id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 242,243,247;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 82,110,145;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 117,172,157;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 163,57,78;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-accent: 224,120,86;
+      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--defaultTheme {
+      color-scheme: normal;
+      --v-theme-background: 242,243,247;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 82,110,145;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 117,172,157;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 163,57,78;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-accent: 224,120,86;
+      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--darkTheme {
+      color-scheme: dark;
+      --v-theme-background: 42,43,51;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 64,65,79;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 143,168,200;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 117,172,157;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 229,126,145;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 100,181,246;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 129,199,132;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 255,183,77;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-accent: 224,120,86;
+      --v-theme-accent-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 0,0,0;
+      --v-theme-on-success: 0,0,0;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .bg-accent {
+      --v-theme-overlay-multiplier: var(--v-theme-accent-overlay-multiplier);
+      background-color: rgb(var(--v-theme-accent)) !important;
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-accent {
+      color: rgb(var(--v-theme-accent)) !important;
+    }
+    .border-accent {
+      --v-border-color: var(--v-theme-accent);
+    }
+    .on-accent {
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+</style>
+<link rel="stylesheet" href="/_nuxt/entry.Cjmm9KU6.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/default.CpPIryp9.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/useUiTheme.6Km2-eGy.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/AppRechargeDialog.BS4EGc26.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/AppPrivacyNotice.D3qCEPYA.css" crossorigin>
+<link rel="preload" as="fetch" crossorigin="anonymous" href="/guides/_payload.json?0b6268ed-5d4d-4043-b09b-f9d31e3293c6">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/D5ADCFoZ.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/Bcl-v6XV.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/Dxj1hEsW.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CMMVwKVX.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/D8E2oNn7.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/Biu5H4gk.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/aEQNRDeA.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/DKtNwg0i.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/DOnseFIZ.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CO1sG9Q3.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CMR56MCK.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/4aYCvMtY.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CK3OMPan.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/C3kSVNIV.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CzgQYhNt.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/B8H2W_2u.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/C0_pdeFt.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/HB0Wqr3S.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CWksAeAv.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/P5f2FBd3.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/BMwfEd1-.js">
+<link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" href="/_nuxt/builds/meta/0b6268ed-5d4d-4043-b09b-f9d31e3293c6.json">
+<script>(function(){var p=Array.prototype;if(!p.findLast){Object.defineProperty(p,'findLast',{value:function(cb,a){for(var i=this.length-1;i>=0;i--){if(cb.call(a,this[i],i,this)){return this[i];}}return undefined;},writable:true,configurable:true});}if(!p.findLastIndex){Object.defineProperty(p,'findLastIndex',{value:function(cb,a){for(var i=this.length-1;i>=0;i--){if(cb.call(a,this[i],i,this)){return i;}}return -1;},writable:true,configurable:true});}if(!Object.hasOwn){Object.defineProperty(Object,'hasOwn',{value:function(o,k){if(o===null||o===undefined){throw new TypeError('Cannot convert undefined or null to object');}return Object.prototype.hasOwnProperty.call(Object(o),k);},writable:true,configurable:true});}})();</script>
+<script>(function(){try{var k=localStorage.getItem('ui_theme');var d=k==='dark'||(!k&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('auth._token.local')||'';if(t.indexOf('Bearer ')===0){t=t.slice(7);}if(!t){return;}var p=t.split('.')[1];if(!p){return;}p=p.replace(/-/g,'+').replace(/_/g,'/');var d=JSON.parse(atob(p));if(d&&d.exp&&d.exp*1000>Date.now()){document.documentElement.setAttribute('data-auth-in','');}}catch(e){}})();</script>
+<meta name="description" content="Общая страница с гайдами и инструкциями: переходы на подробные страницы про GPT, вайбкодинг, нейросети, генерацию изображений и AI-инструменты.">
+<meta name="yandex-verification" content="2a983377d8b44428">
+<meta property="og:site_name" content="GPT Chat Беларусь">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gpt-chat.by/og/cover.jpg?v=2">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GPT Chat Беларусь">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gpt-chat.by/og/cover.jpg?v=2">
+<meta name="theme-color" content="#75ac9d">
+<link rel="icon" type="image/svg+xml" sizes="120x120" href="/logo_120x120.svg?v=2">
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest?v=2" data-hid="manifest">
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108702722', 'ym');ym(108702722, 'init', {ssr:false, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});</script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P06C2J3995');</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108702722" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<meta name="keywords" content="гайды gpt, инструкции chat gpt, вайбкодинг, нейросеть онлайн, генерация изображений, ai инструменты">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Гайды и инструкции по GPT и нейросетям | GPT-Chat">
+<meta property="og:description" content="Общая страница с гайдами и инструкциями: переходы на подробные страницы про GPT, вайбкодинг, нейросети, генерацию изображений и AI-инструменты.">
+<meta property="og:url" content="https://gpt-chat.by/guides/">
+<meta name="twitter:title" content="Гайды и инструкции по GPT и нейросетям | GPT-Chat">
+<meta name="twitter:description" content="Общая страница с гайдами и инструкциями: переходы на подробные страницы про GPT, вайбкодинг, нейросети, генерацию изображений и AI-инструменты.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://gpt-chat.by/"},{"@type":"ListItem","position":2,"name":"Гайды","item":"https://gpt-chat.by/guides"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Гайды и инструкции по GPT и нейросетям","itemListElement":[{"@type":"ListItem","position":1,"name":"Как оплатить GPT-чат в Беларуси и России","url":"https://gpt-chat.by/guides/payment"},{"@type":"ListItem","position":2,"name":"GPT бесплатно: как начать","url":"https://gpt-chat.by/guides/gpt"},{"@type":"ListItem","position":3,"name":"Нейросети онлайн: полный разбор","url":"https://gpt-chat.by/guides/neural-networks"},{"@type":"ListItem","position":4,"name":"Нейросети без VPN из РФ и РБ","url":"https://gpt-chat.by/guides/neyroseti-bez-vpn"},{"@type":"ListItem","position":5,"name":"Sora и видео без VPN из РФ и РБ","url":"https://gpt-chat.by/guides/sora-bez-vpn"},{"@type":"ListItem","position":6,"name":"Генерация изображений нейросетью","url":"https://gpt-chat.by/guides/image-generator"},{"@type":"ListItem","position":7,"name":"Редактирование фото нейросетью","url":"https://gpt-chat.by/guides/photo-editing"},{"@type":"ListItem","position":8,"name":"Генерация видео нейросетью","url":"https://gpt-chat.by/guides/video-generator"},{"@type":"ListItem","position":9,"name":"Как создать логотип онлайн","url":"https://gpt-chat.by/guides/logo-design"},{"@type":"ListItem","position":10,"name":"Генерация музыки нейросетью","url":"https://gpt-chat.by/guides/music-generator"},{"@type":"ListItem","position":11,"name":"RAG: вопросы по своим документам","url":"https://gpt-chat.by/guides/rag"},{"@type":"ListItem","position":12,"name":"Вайбкодинг в 2026","url":"https://gpt-chat.by/guides/vibe-coding"},{"@type":"ListItem","position":13,"name":"AI-инструменты: обзор и выбор","url":"https://gpt-chat.by/guides/tools"}]}</script>
+<script type="module" src="/_nuxt/D5ADCFoZ.js" crossorigin></script><link rel="canonical" href="https://gpt-chat.by/guides/">
+</head><body><div id="__nuxt"><div class="v-application v-theme--defaultTheme v-layout v-layout--full-height v-locale--is-ltr" style="" id="inspire" data-v-9c0b1995><div class="v-application__wrap"><!--[--><!--[--><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--defaultTheme v-navigation-drawer--mobile" style="left:0;z-index:1004;transform:translateX(-256px);position:fixed;transition:none !important;" inert data-v-9c0b1995><!----><!----><div class="v-navigation-drawer__content"><!--[--><div class="menu-wrapper d-flex flex-column h-100" data-v-9c0b1995 data-v-e6f475cf><div class="v-list v-theme--defaultTheme bg-transparent v-list--density-default v-list--one-line" style="" tabindex="0" role="list" data-v-e6f475cf><!--[--><a href="/chat" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-chat mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Чат GPT</div><!----><!----></div><!----></a><a href="/music" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-music mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Создать песню</div><!----><!----></div><!----></a><a href="/logo" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-palette-swatch mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Создать логотип</div><!----><!----></div><!----></a><a href="/photo" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-image-edit mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Фото-инструменты</div><!----><!----></div><!----></a><a href="/rag-collections" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-file-document mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">RAG-коллекции</div><!----><!----></div><!----></a><a href="/doc-api" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-api mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">API</div><!----><!----></div><!----></a><a href="/pricing" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-currency-usd mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Стоимость</div><!----><!----></div><!----></a><a href="/guides" aria-current="page" tabindex="-2" class="v-list-item v-list-item--active v-list-item--link v-theme--defaultTheme text-primary v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-book-open-page-variant-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Инструкции</div><!----><!----></div><!----></a><a href="/news" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-newspaper-variant-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Новости</div><!----><!----></div><!----></a><!--]--></div><div class="v-list v-theme--defaultTheme bg-transparent v-list--density-default v-list--one-line" style="" tabindex="0" role="list" data-v-e6f475cf><!--[--><div class="v-list-subheader" style="" data-v-e6f475cf><div class="v-list-subheader__text"><!--[-->Наши продукты<!--]--></div></div><a href="/dietolog" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-calculator mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Подсчёт калорий</div><!----><!----></div><!----></a><div tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-microsoft-visual-studio-code mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Klepa</div><!----><!----></div><div class="v-list-item__append"><!--[--><!--[--><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" data-v-e6f475cf></i><!--]--><!--]--><div class="v-list-item__spacer"></div></div></div><div style="display:none;" data-v-e6f475cf data-v-e6f475cf><a href="/klepa/overview" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-eye mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Обзор</div><!----><!----></div><!----></a><a href="/klepa/installing" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-download mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Установка</div><!----><!----></div><!----></a><a href="/klepa/quickstart" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-rocket-launch mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Quickstart</div><!----><!----></div><!----></a><a href="/klepa/best-practices" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-lightbulb-on-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Лучшие практики</div><!----><!----></div><!----></a><a href="/klepa/codanna" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-brain mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Codanna</div><!----><!----></div><!----></a><a href="/klepa/image-generation" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-image-multiple mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Генерация изображений</div><!----><!----></div><!----></a><a href="/klepa/marketplace" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-store-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Marketplace</div><!----><!----></div><!----></a></div><!--]--></div><!----><!----></div><!--]--></div><!----></nav><!----><!--]--><header class="v-toolbar v-toolbar--collapse-start v-toolbar--flat v-toolbar--density-default bg-secondary v-theme--defaultTheme v-locale--is-ltr v-app-bar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;transition:none !important;" data-v-9c0b1995><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-container v-locale--is-ltr d-flex align-center" style="" data-v-9c0b1995><div class="v-avatar v-theme--defaultTheme bg-white v-avatar--density-default v-avatar--variant-flat pa-1" style="width:55px;height:55px;" data-v-9c0b1995><!--[--><!--[--><a href="/" class="d-block w-100 h-100" data-v-9c0b1995><img src="/logo.svg" width="47" height="47" alt="GPT Chat — нейросеть без VPN в Беларуси и России" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:contain;" data-v-9c0b1995></a><!--]--><!--]--><!--[--><!----><span class="v-avatar__underlay"></span><!--]--></div><button type="button" class="v-btn v-btn--icon v-theme--defaultTheme text-white v-btn--density-default v-btn--size-default v-btn--variant-text v-app-bar-nav-icon" style="" aria-label="Открыть меню" data-v-9c0b1995><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-menu mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><div class="v-spacer" style="" data-v-9c0b1995></div><!----><div class="v-spacer" style="" data-v-9c0b1995></div><span class="feedback-widget" data-v-9c0b1995 data-v-3701ae3a><!--[--><!--[--><button type="button" class="v-btn v-btn--icon v-theme--defaultTheme text-white v-btn--density-default v-btn--size-small v-btn--variant-text mr-1" style="" aria-describedby="v-tooltip-v-0-3" aria-label="Сообщить о проблеме" data-v-3701ae3a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-message-alert-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><!--]--><!----><!--]--><!--[--><!----><!----><!--]--></span><!--[--><!--[--><button type="button" class="v-btn v-btn--icon v-theme--defaultTheme text-white v-btn--density-default v-btn--size-small v-btn--variant-text mr-1" style="" aria-describedby="v-tooltip-v-0-5" aria-label="Включить тёмную тему" data-v-9c0b1995><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-weather-night mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><!--]--><!----><!--]--><!----><!--[--><!--[--><button type="button" class="v-btn v-theme--defaultTheme text-white v-btn--density-default v-btn--size-small v-btn--variant-outlined ml-2" style="" aria-describedby="v-tooltip-v-0-7" data-auth-guest aria-label="Войти через Telegram"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-login mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--><!----><!--]--><!--]--></span><!----><!----></button><!--]--><!----><!--]--><!----></div><!--]--><!----></div><!--]--><!--[--><!----><!--]--></header><main class="v-main" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;" data-v-9c0b1995><!--[--><!----><div class="v-container v-locale--is-ltr" style="" data-v-9c0b1995><!--[--><div></div><div class="v-container v-locale--is-ltr py-8" style=""><div class="v-row justify-center" style=""><div class="v-col-md-11 v-col-lg-10 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default elevation-2 v-card--variant-elevated pa-6" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><h1 class="text-h3 font-weight-bold mb-4"> Гайды и инструкции </h1><p class="text-body-1 mb-6"> Здесь вы найдете полезные статьи о том, как и что использовать: от первого запроса в GPT до внедрения AI-инструментов в рабочие процессы. Это общая страница-оглавление - переходите в нужный раздел и читайте подробные инструкции с реальными примерами. </p><p class="text-body-2 text-grey-darken-1 mb-6"> Хотите быстрее получать результат, писать более точные запросы и избегать типовых ошибок? Выберите тему ниже и откройте подробный материал. </p><div class="v-alert v-theme--defaultTheme text-info v-alert--density-default v-alert--variant-tonal mb-6" style="" role="alert"><!--[--><!----><span class="v-alert__underlay"></span><!--]--><!----><div class="v-alert__prepend"><i class="mdi-information mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i></div><div class="v-alert__content"><!----><!----><!--[--> Рекомендуемый порядок для новичков: <strong>GPT -&gt; Нейросети -&gt; Изображения -&gt; Редактирование фото -&gt; Видео -&gt; RAG -&gt; Вайбкодинг -&gt; Инструменты</strong>. <!--]--></div><!----><!----></div><div class="v-row" style=""><!--[--><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-credit-card-check-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Как оплатить GPT-чат в Беларуси и России</h2></div><p class="text-body-2 mb-2">Пошаговая оплата картами МИР и БЕЛКАРТ/Visa/Mastercard: легально, безопасно и без наценок через защищённый процессинг WEBPAY.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: шаги пополнения, карты МИР 🇷🇺 и БЕЛКАРТ/Visa/Mastercard 🇧🇾, безопасность, возврат средств, FAQ</p><a href="/guides/payment" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-chat-processing-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">GPT бесплатно: как начать</h2></div><p class="text-body-2 mb-2">Базовый вход в Chat GPT без VPN: старт, первые запросы и быстрые результаты.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: пошаговый старт, ошибки новичков, шаблоны запросов, примеры из учебы и бизнеса</p><a href="/guides/gpt" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-brain mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Нейросети онлайн: полный разбор</h2></div><p class="text-body-2 mb-2">Как выбирать нейросеть под задачу: текст, код, визуал, документы.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: категории сервисов, критерии выбора, сравнение по цене и качеству, юзкейсы</p><a href="/guides/neural-networks" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-shield-check-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Нейросети без VPN из РФ и РБ</h2></div><p class="text-body-2 mb-2">Какие нейросети работают без VPN, как ими пользоваться и оплатить картой МИР и БЕЛКАРТ.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: почему нужен VPN, 3 шага доступа, список моделей без VPN, сравнение VPN/сервис, FAQ</p><a href="/guides/neyroseti-bez-vpn" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-movie-filter-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Sora и видео без VPN из РФ и РБ</h2></div><p class="text-body-2 mb-2">Как генерировать видео нейросетью без VPN: Sora 2, Veo, Kling, Wan в одном чате, оплата картой МИР.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: почему Sora не открывается и почему VPN не выход, 3 шага, примеры роликов, сравнение видеомоделей и цены, FAQ</p><a href="/guides/sora-bez-vpn" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-image-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Генерация изображений нейросетью</h2></div><p class="text-body-2 mb-2">Практика создания картинок по описанию для контента и маркетинга.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: правильные промпты, модели сайта с ценами, примеры сгенерированных картинок</p><a href="/guides/image-generator" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-image-edit-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Редактирование фото нейросетью</h2></div><p class="text-body-2 mb-2">Убрать фон или людей с фото, добавить детали, сменить стиль, совместить картинки — по текстовой команде.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: примеры до/после, пошаговая инструкция, как писать команды, цены, FAQ</p><a href="/guides/photo-editing" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-movie-open-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Генерация видео нейросетью</h2></div><p class="text-body-2 mb-2">Короткие ролики по тексту и оживление картинок: Sora, Veo, Kling, Wan.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: пошаговая инструкция, сравнение видеомоделей, примеры готовых роликов, промпты</p><a href="/guides/video-generator" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-palette-swatch-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Как создать логотип онлайн</h2></div><p class="text-body-2 mb-2">Конструктор логотипов с ИИ: текст, иконки, фигуры и генерация символа нейросетью. Экспорт в SVG и PNG без водяного знака.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: пошаговая инструкция, как описать логотип нейросети, типичные ошибки, цены, FAQ</p><a href="/guides/logo-design" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-music-note-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Генерация музыки нейросетью</h2></div><p class="text-body-2 mb-2">Песни с вокалом по вашему тексту и инструментальные треки: модели Google Lyria 3 Clip и Pro.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: пошаговая инструкция, примеры готовых треков, как писать промпт, цены за клип и за песню</p><a href="/guides/music-generator" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-database-search-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">RAG: вопросы по своим документам</h2></div><p class="text-body-2 mb-2">Загрузите PDF, DOCX или сайт — и спрашивайте нейросеть по содержимому.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: создание коллекций, форматы файлов, использование в чате, боты для Telegram и Slack</p><a href="/guides/rag" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-code-braces mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">Вайбкодинг в 2026</h2></div><p class="text-body-2 mb-2">Как писать и ускорять разработку с AI-ассистентом на практике.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: workflow для разработчика, связка инструментов, примеры задач и ограничений</p><a href="/guides/vibe-coding" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 pa-4 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="d-flex align-center mb-3"><i class="mdi-tools mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default text-primary mr-2" style="" aria-hidden="true"></i><h2 class="text-h6">AI-инструменты: обзор и выбор</h2></div><p class="text-body-2 mb-2">Разбор инструментов для разработки, контента и ежедневной продуктивности.</p><p class="text-caption text-grey-darken-1 mb-4"> В подробной странице: сильные/слабые стороны, кому что подходит, практические сценарии внедрения</p><a href="/guides/tools" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated mt-auto" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Перейти к инструкции <!--]--><!--]--></span><!----><!----></a><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><!--]--></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div></div></div><!--]--></div><footer class="v-footer v-theme--defaultTheme bg-secondary d-flex flex-column pt-6 pb-4" style="height:auto;" data-v-9c0b1995><div class="v-container v-locale--is-ltr py-0" style="" data-v-9c0b1995><div class="v-row v-row--dense" style="" data-v-9c0b1995><!--[--><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>AI-инструменты</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/photo" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Фото-инструменты ИИ</a><a href="/photo/primerka" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Виртуальная примерка одежды</a><a href="/photo/predmetka" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Предметная съёмка товара</a><a href="/logo" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Создать логотип</a><a href="/music" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Создать песню</a><!--]--></div></div><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>Сервис</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/chat" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Чат с нейросетями</a><a href="/pricing" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Тарифы и цены</a><a href="/dietolog" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Подсчёт калорий ИИ</a><a href="/news" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Новости ИИ</a><!--]--></div></div><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>Гайды</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/guides/image-generator" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Генерация изображений</a><a href="/guides/video-generator" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Генерация видео</a><a href="/guides/music-generator" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Генерация музыки</a><a href="/guides/neyroseti-bez-vpn" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Нейросети без VPN</a><a aria-current="page" href="/guides" class="router-link-active router-link-exact-active footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Все гайды и инструкции</a><!--]--></div></div><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>О сервисе</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/about" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>О нас</a><a href="/offer" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Публичная оферта</a><a href="/privacy-policy" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Политика конфиденциальности</a><a href="/about#requisites" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Реквизиты и контакты</a><!--]--></div></div><!--]--></div><div class="text-caption text-white text-center mt-5 footer-copy" data-v-9c0b1995> © GPT Chat Беларусь — нейросети без VPN в Беларуси и России </div></div></footer><!--]--></main><!--[--><!----><!----><!--]--><span data-v-9c0b1995 data-v-47c2d5d6></span><!--[--><!----><!----><!--]--><!--[--><!----><!----><!--]--><!--]--></div></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/guides/_payload.json?0b6268ed-5d4d-4043-b09b-f9d31e3293c6">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"pinia":8,"prerenderedAt":31},["Reactive",2],{},["Set"],["ShallowReactive",5],{},true,"/guides",["Reactive",9],{"auth":10,"billing":13,"token":25,"pushPrompt":27},{"user":-1,"loggedIn":11,"strategy":12},false,"local",{"balance":14,"isLoading":18,"isLoaded":20,"expensesLoaded":21,"monthlyExpenseList":22},["Ref",15],["Reactive",16],{"byn":17,"rub":17,"usd":17},0,["EmptyRef",19],"false",["EmptyRef",19],["EmptyRef",19],["Ref",23],["Reactive",24],[],{"apiKey":26},null,{"isOpen":28,"taskType":29},["EmptyRef",19],["Ref",30],"generic",1784833088317]</script>
+<script>window.__NUXT__={};window.__NUXT__.config={public:{apiBase:"https://api.gpt-chat.by/api",telegramBotID:"7714752762",vapidPublicKey:""},app:{baseURL:"/",buildId:"0b6268ed-5d4d-4043-b09b-f9d31e3293c6",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>

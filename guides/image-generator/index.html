@@ -1,0 +1,567 @@
+<!DOCTYPE html><html  lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Создание изображений нейросетью — онлайн, без VPN</title>
+<script src="https://telegram.org/js/telegram-widget.js?22" async defer></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=G-P06C2J3995" async></script>
+<style id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 242,243,247;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 82,110,145;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 117,172,157;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 163,57,78;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-accent: 224,120,86;
+      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--defaultTheme {
+      color-scheme: normal;
+      --v-theme-background: 242,243,247;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 82,110,145;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 117,172,157;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 163,57,78;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-accent: 224,120,86;
+      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--darkTheme {
+      color-scheme: dark;
+      --v-theme-background: 42,43,51;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 64,65,79;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 143,168,200;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 117,172,157;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 229,126,145;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 100,181,246;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 129,199,132;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 255,183,77;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-accent: 224,120,86;
+      --v-theme-accent-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 0,0,0;
+      --v-theme-on-success: 0,0,0;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-accent: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .bg-accent {
+      --v-theme-overlay-multiplier: var(--v-theme-accent-overlay-multiplier);
+      background-color: rgb(var(--v-theme-accent)) !important;
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-accent {
+      color: rgb(var(--v-theme-accent)) !important;
+    }
+    .border-accent {
+      --v-border-color: var(--v-theme-accent);
+    }
+    .on-accent {
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+</style>
+<link rel="stylesheet" href="/_nuxt/entry.Cjmm9KU6.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/default.CpPIryp9.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/useUiTheme.6Km2-eGy.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/AppRechargeDialog.BS4EGc26.css" crossorigin>
+<link rel="stylesheet" href="/_nuxt/AppPrivacyNotice.D3qCEPYA.css" crossorigin>
+<link rel="preload" as="fetch" crossorigin="anonymous" href="/guides/image-generator/_payload.json?0b6268ed-5d4d-4043-b09b-f9d31e3293c6">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/D5ADCFoZ.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/Bcl-v6XV.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/Dxj1hEsW.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CMMVwKVX.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/D8E2oNn7.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/Biu5H4gk.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/aEQNRDeA.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/DKtNwg0i.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/DOnseFIZ.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CO1sG9Q3.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CMR56MCK.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/4aYCvMtY.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CK3OMPan.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/C3kSVNIV.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CzgQYhNt.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/B8H2W_2u.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/C0_pdeFt.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/HB0Wqr3S.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CWksAeAv.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/P5f2FBd3.js">
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/DGhgWIHq.js">
+<link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" href="/_nuxt/builds/meta/0b6268ed-5d4d-4043-b09b-f9d31e3293c6.json">
+<script>(function(){var p=Array.prototype;if(!p.findLast){Object.defineProperty(p,'findLast',{value:function(cb,a){for(var i=this.length-1;i>=0;i--){if(cb.call(a,this[i],i,this)){return this[i];}}return undefined;},writable:true,configurable:true});}if(!p.findLastIndex){Object.defineProperty(p,'findLastIndex',{value:function(cb,a){for(var i=this.length-1;i>=0;i--){if(cb.call(a,this[i],i,this)){return i;}}return -1;},writable:true,configurable:true});}if(!Object.hasOwn){Object.defineProperty(Object,'hasOwn',{value:function(o,k){if(o===null||o===undefined){throw new TypeError('Cannot convert undefined or null to object');}return Object.prototype.hasOwnProperty.call(Object(o),k);},writable:true,configurable:true});}})();</script>
+<script>(function(){try{var k=localStorage.getItem('ui_theme');var d=k==='dark'||(!k&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('auth._token.local')||'';if(t.indexOf('Bearer ')===0){t=t.slice(7);}if(!t){return;}var p=t.split('.')[1];if(!p){return;}p=p.replace(/-/g,'+').replace(/_/g,'/');var d=JSON.parse(atob(p));if(d&&d.exp&&d.exp*1000>Date.now()){document.documentElement.setAttribute('data-auth-in','');}}catch(e){}})();</script>
+<meta name="description" content="Как генерировать картинки на gpt-chat.by: модели Nano Banana, FLUX.2, Recraft, Grok Imagine, GPT-5.4 Image. Промпты, примеры готовых работ, редактирование и слияние фото.">
+<meta name="yandex-verification" content="2a983377d8b44428">
+<meta property="og:site_name" content="GPT Chat Беларусь">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gpt-chat.by/og/cover.jpg?v=2">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GPT Chat Беларусь">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gpt-chat.by/og/cover.jpg?v=2">
+<meta name="theme-color" content="#75ac9d">
+<link rel="icon" type="image/svg+xml" sizes="120x120" href="/logo_120x120.svg?v=2">
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest?v=2" data-hid="manifest">
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108702722', 'ym');ym(108702722, 'init', {ssr:false, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});</script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P06C2J3995');</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108702722" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<meta name="keywords" content="нейросеть для создания изображений, генератор картинок, ai рисование, создать картинку по описанию, nano banana, flux, recraft, gemini image">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Создание изображений нейросетью — онлайн, без VPN">
+<meta property="og:description" content="Как генерировать картинки на gpt-chat.by: модели Nano Banana, FLUX.2, Recraft, Grok Imagine, GPT-5.4 Image. Промпты, примеры готовых работ, редактирование и слияние фото.">
+<meta property="og:url" content="https://gpt-chat.by/guides/image-generator/">
+<meta name="twitter:title" content="Создание изображений нейросетью — онлайн, без VPN">
+<meta name="twitter:description" content="Как генерировать картинки на gpt-chat.by: модели Nano Banana, FLUX.2, Recraft, Grok Imagine, GPT-5.4 Image. Промпты, примеры готовых работ, редактирование и слияние фото.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://gpt-chat.by/"},{"@type":"ListItem","position":2,"name":"Гайды","item":"https://gpt-chat.by/guides"},{"@type":"ListItem","position":3,"name":"Генерация картинок","item":"https://gpt-chat.by/guides/image-generator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно ли сгенерировать картинку бесплатно?","acceptedAnswer":{"@type":"Answer","text":"Генерация картинок оплачивается с баланса по тарифу выбранной модели. Самые дешёвые (FLUX.2 Klein, Riverflow Fast) стоят буквально копейки. Бесплатный гостевой чат доступен без регистрации — для знакомства с сервисом."}},{"@type":"Question","name":"Какую модель выбрать?","acceptedAnswer":{"@type":"Answer","text":"Для черновиков и быстрых итераций — FLUX.2 Klein. Универсальный выбор по умолчанию — Nano Banana, хорошо понимает русский. Для фотореализма — Grok Imagine, для логотипов и векторной графики (SVG) — Recraft, для текста на картинке — Riverflow Pro."}},{"@type":"Question","name":"Нужен ли VPN или зарубежная карта?","acceptedAnswer":{"@type":"Answer","text":"Нет. Сервис работает из Беларуси и России без VPN, вход — через Telegram. Баланс пополняется картами БЕЛКАРТ, МИР, Visa и Mastercard через WEBPAY."}},{"@type":"Question","name":"Можно ли задать соотношение сторон и отредактировать своё фото?","acceptedAnswer":{"@type":"Answer","text":"Да, перед генерацией можно выбрать соотношение сторон (квадрат, 16:9, вертикаль и др.). Загруженное фото можно редактировать и объединять с другими изображениями прямо в чате."}},{"@type":"Question","name":"Можно ли использовать картинки в коммерческих целях?","acceptedAnswer":{"@type":"Answer","text":"Обычно сгенерированные изображения можно использовать в личных и маркетинговых целях, но права зависят от модели и юрисдикции. Перепродавать их как «оригинальное произведение искусства» нельзя — проверяйте условия конкретной модели."}}]}</script>
+<script type="module" src="/_nuxt/D5ADCFoZ.js" crossorigin></script><link rel="canonical" href="https://gpt-chat.by/guides/image-generator/">
+</head><body><div id="__nuxt"><div class="v-application v-theme--defaultTheme v-layout v-layout--full-height v-locale--is-ltr" style="" id="inspire" data-v-9c0b1995><div class="v-application__wrap"><!--[--><!--[--><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--defaultTheme v-navigation-drawer--mobile" style="left:0;z-index:1004;transform:translateX(-256px);position:fixed;transition:none !important;" inert data-v-9c0b1995><!----><!----><div class="v-navigation-drawer__content"><!--[--><div class="menu-wrapper d-flex flex-column h-100" data-v-9c0b1995 data-v-e6f475cf><div class="v-list v-theme--defaultTheme bg-transparent v-list--density-default v-list--one-line" style="" tabindex="0" role="list" data-v-e6f475cf><!--[--><a href="/chat" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-chat mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Чат GPT</div><!----><!----></div><!----></a><a href="/music" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-music mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Создать песню</div><!----><!----></div><!----></a><a href="/logo" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-palette-swatch mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Создать логотип</div><!----><!----></div><!----></a><a href="/photo" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-image-edit mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Фото-инструменты</div><!----><!----></div><!----></a><a href="/rag-collections" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-file-document mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">RAG-коллекции</div><!----><!----></div><!----></a><a href="/doc-api" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-api mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">API</div><!----><!----></div><!----></a><a href="/pricing" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-currency-usd mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Стоимость</div><!----><!----></div><!----></a><a href="/guides" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-book-open-page-variant-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Инструкции</div><!----><!----></div><!----></a><a href="/news" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-newspaper-variant-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Новости</div><!----><!----></div><!----></a><!--]--></div><div class="v-list v-theme--defaultTheme bg-transparent v-list--density-default v-list--one-line" style="" tabindex="0" role="list" data-v-e6f475cf><!--[--><div class="v-list-subheader" style="" data-v-e6f475cf><div class="v-list-subheader__text"><!--[-->Наши продукты<!--]--></div></div><a href="/dietolog" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-calculator mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Подсчёт калорий</div><!----><!----></div><!----></a><div tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-microsoft-visual-studio-code mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Klepa</div><!----><!----></div><div class="v-list-item__append"><!--[--><!--[--><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" data-v-e6f475cf></i><!--]--><!--]--><div class="v-list-item__spacer"></div></div></div><div style="display:none;" data-v-e6f475cf data-v-e6f475cf><a href="/klepa/overview" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-eye mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Обзор</div><!----><!----></div><!----></a><a href="/klepa/installing" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-download mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Установка</div><!----><!----></div><!----></a><a href="/klepa/quickstart" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-rocket-launch mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Quickstart</div><!----><!----></div><!----></a><a href="/klepa/best-practices" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-lightbulb-on-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Лучшие практики</div><!----><!----></div><!----></a><a href="/klepa/codanna" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-brain mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Codanna</div><!----><!----></div><!----></a><a href="/klepa/image-generation" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-image-multiple mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Генерация изображений</div><!----><!----></div><!----></a><a href="/klepa/marketplace" tabindex="-2" class="v-list-item v-list-item--link v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text ml-4" style="" role="link" data-v-e6f475cf><!--[--><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-store-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Marketplace</div><!----><!----></div><!----></a></div><!--]--></div><!----><!----></div><!--]--></div><!----></nav><!----><!--]--><header class="v-toolbar v-toolbar--collapse-start v-toolbar--flat v-toolbar--density-default bg-secondary v-theme--defaultTheme v-locale--is-ltr v-app-bar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;transition:none !important;" data-v-9c0b1995><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-container v-locale--is-ltr d-flex align-center" style="" data-v-9c0b1995><div class="v-avatar v-theme--defaultTheme bg-white v-avatar--density-default v-avatar--variant-flat pa-1" style="width:55px;height:55px;" data-v-9c0b1995><!--[--><!--[--><a href="/" class="d-block w-100 h-100" data-v-9c0b1995><img src="/logo.svg" width="47" height="47" alt="GPT Chat — нейросеть без VPN в Беларуси и России" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:contain;" data-v-9c0b1995></a><!--]--><!--]--><!--[--><!----><span class="v-avatar__underlay"></span><!--]--></div><button type="button" class="v-btn v-btn--icon v-theme--defaultTheme text-white v-btn--density-default v-btn--size-default v-btn--variant-text v-app-bar-nav-icon" style="" aria-label="Открыть меню" data-v-9c0b1995><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-menu mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><div class="v-spacer" style="" data-v-9c0b1995></div><!----><div class="v-spacer" style="" data-v-9c0b1995></div><span class="feedback-widget" data-v-9c0b1995 data-v-3701ae3a><!--[--><!--[--><button type="button" class="v-btn v-btn--icon v-theme--defaultTheme text-white v-btn--density-default v-btn--size-small v-btn--variant-text mr-1" style="" aria-describedby="v-tooltip-v-0-3" aria-label="Сообщить о проблеме" data-v-3701ae3a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-message-alert-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><!--]--><!----><!--]--><!--[--><!----><!----><!--]--></span><!--[--><!--[--><button type="button" class="v-btn v-btn--icon v-theme--defaultTheme text-white v-btn--density-default v-btn--size-small v-btn--variant-text mr-1" style="" aria-describedby="v-tooltip-v-0-5" aria-label="Включить тёмную тему" data-v-9c0b1995><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-weather-night mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><!--]--><!----><!--]--><!----><!--[--><!--[--><button type="button" class="v-btn v-theme--defaultTheme text-white v-btn--density-default v-btn--size-small v-btn--variant-outlined ml-2" style="" aria-describedby="v-tooltip-v-0-7" data-auth-guest aria-label="Войти через Telegram"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-login mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--><!----><!--]--><!--]--></span><!----><!----></button><!--]--><!----><!--]--><!----></div><!--]--><!----></div><!--]--><!--[--><!----><!--]--></header><main class="v-main" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;" data-v-9c0b1995><!--[--><!----><div class="v-container v-locale--is-ltr" style="" data-v-9c0b1995><!--[--><div></div><div class="v-container v-locale--is-ltr py-8" style=""><div class="v-row justify-center" style=""><div class="v-col-md-10 v-col-lg-9 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default elevation-2 v-card--variant-elevated pa-6" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><h1 class="text-h4 font-weight-bold mb-4"> Создание изображений нейросетью — онлайн, без VPN </h1><p class="text-body-1 mb-4"><strong>Генерация изображений нейросетью</strong> — это создание визуального контента по текстовому описанию (промпту). На gpt-chat.by доступны больше десяти актуальных моделей: Nano Banana (Gemini Image), FLUX.2, Recraft, Seedream, Grok Imagine, GPT-5.4 Image и другие. Вы описываете желаемый результат — и через несколько секунд получаете готовую картинку, которую можно сразу скачать. </p><p class="text-body-1 mb-6"> Кроме генерации с нуля, сервис умеет <strong>редактировать и совмещать картинки</strong>: загрузите от 1 до 3 изображений и опишите, что изменить — заменить фон, добавить объект, перенести стиль или объединить несколько фото в одно. </p><div class="v-alert v-theme--defaultTheme text-success v-alert--density-default v-alert--variant-tonal mb-8" style="" role="alert"><!--[--><!----><span class="v-alert__underlay"></span><!--]--><!----><div class="v-alert__prepend"><i class="mdi-check-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i></div><div class="v-alert__content"><!----><!----><!--[--> Попробовать можно сразу на <a href="/chat" class="text-decoration-underline font-weight-bold"> странице чата </a> — выберите режим «Генерация картинки». Актуальные цены всех моделей — на <a href="/pricing" class="text-decoration-underline font-weight-bold"> странице тарифов </a>. <!--]--></div><!----><!----></div><h2 class="text-h5 font-weight-bold mb-3"> Как сгенерировать картинку: пошагово </h2><div class="v-list v-theme--defaultTheme v-list--density-compact v-list--one-line mb-6" style="" tabindex="0" role="list"><!--[--><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-1-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Откройте чат и выберите режим</div><div class="v-list-item-subtitle" style="">На странице чата нажмите карточку «Генерация картинки». Для редактирования готовых фото есть отдельный режим «Редактирование / слияние картинок».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-2-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Выберите модель</div><div class="v-list-item-subtitle" style="">В выпадающем списке — все доступные модели с описаниями. Для первых экспериментов подойдёт Nano Banana (стоит копейки), для важного результата — Nano Banana Pro или GPT-5.4 Image.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-3-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Напишите промпт</div><div class="v-list-item-subtitle" style="">До 2000 символов. Модели понимают русский язык — описывайте на родном. Чем конкретнее описание, тем предсказуемее результат.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-4-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Получите результат</div><div class="v-list-item-subtitle" style="">Картинка появится прямо в чате — её можно скачать кнопкой под сообщением. Не понравилось — уточните промпт и сгенерируйте ещё раз.</div><!----></div><!----></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Примеры: картинки, сгенерированные на сайте </h2><p class="text-body-1 mb-4"> Все примеры ниже созданы моделями, доступными на gpt-chat.by. Под каждой картинкой — промпт и модель, которой она сгенерирована. </p><div class="v-row mb-6" style=""><!--[--><div class="v-col-sm-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="v-responsive v-img v-img--booting" style="" aria-label="Рекламный баннер: команда в современном офисе" role="img"><div class="v-responsive__sizer" style="padding-bottom:52.63157894736842%;"></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-card-text" style=""><span class="v-chip v-theme--defaultTheme text-primary v-chip--density-default v-chip--size-x-small v-chip--variant-tonal mb-2" style="" draggable="false"><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><!----><div class="v-chip__content" data-no-activator><!--[-->Nano Banana (Gemini 2.5 Flash Image)<!--]--></div><!----><!----></span><p class="text-body-2 font-italic mb-0"> «Широкий промо-баннер 16:9: современный технологичный офис, команда работает за ноутбуками, мягкий свет из больших окон, минимализм, сине-белая палитра, место под заголовок в центре» </p></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-sm-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="v-responsive v-img v-img--booting" style="" aria-label="Предметная съёмка керамической кружки на мраморе" role="img"><div class="v-responsive__sizer" style="padding-bottom:90.9090909090909%;"></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-card-text" style=""><span class="v-chip v-theme--defaultTheme text-primary v-chip--density-default v-chip--size-x-small v-chip--variant-tonal mb-2" style="" draggable="false"><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><!----><div class="v-chip__content" data-no-activator><!--[-->Grok Imagine (xAI)<!--]--></div><!----><!----></span><p class="text-body-2 font-italic mb-0"> «Предметная фотография элегантной керамической кружки на белом мраморе, мягкое студийное освещение с лёгкой тенью, ракурс сверху, ультрареалистично, 4K, без реквизита» </p></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-sm-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="v-responsive v-img v-img--booting" style="" aria-label="Плоская иллюстрация: человек медитирует с ноутбуком" role="img"><div class="v-responsive__sizer" style="padding-bottom:75.18796992481202%;"></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-card-text" style=""><span class="v-chip v-theme--defaultTheme text-primary v-chip--density-default v-chip--size-x-small v-chip--variant-tonal mb-2" style="" draggable="false"><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><!----><div class="v-chip__content" data-no-activator><!--[-->FLUX.2 Klein 4B<!--]--></div><!----><!----></span><p class="text-body-2 font-italic mb-0"> «Плоская иллюстрация: человек медитирует с ноутбуком в уютном домашнем офисе, тёплые оранжево-бежевые цвета, простые геометрические формы, современный векторный стиль, без текста» </p></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-sm-6 v-col-12" style=""><div class="v-card v-theme--defaultTheme v-card--density-default v-card--variant-outlined h-100 d-flex flex-column" style=""><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--defaultTheme v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="v-responsive v-img v-img--booting" style="" aria-label="Минималистичный логотип эко-фермы с листом" role="img"><div class="v-responsive__sizer" style="padding-bottom:75.18796992481202%;"></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><div class="v-card-text" style=""><span class="v-chip v-theme--defaultTheme text-primary v-chip--density-default v-chip--size-x-small v-chip--variant-tonal mb-2" style="" draggable="false"><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><!----><div class="v-chip__content" data-no-activator><!--[-->Recraft V4.1<!--]--></div><!----><!----></span><p class="text-body-2 font-italic mb-0"> «Минималистичный логотип эко-фермы: лист в сочетании с солнцем, зелёный и коричневый цвета, чистый векторный стиль, белый фон, без текста» </p></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Какие модели доступны и что выбрать </h2><p class="text-body-1 mb-4"> Каждая модель сильна в своём. Ориентировочная стоимость указана в долларах за одну картинку — списание идёт с баланса в белорусских рублях по курсу, точные цены смотрите на <a href="/pricing" class="text-decoration-underline"> странице тарифов </a>. </p><div class="v-table v-theme--defaultTheme v-table--density-default mb-8" style=""><!----><div class="v-table__wrapper" style=""><table><!--[--><thead><tr><th>Модель</th><th>Сильные стороны</th><th>Цена за картинку</th></tr></thead><tbody><!--[--><tr><td class="font-weight-medium">FLUX.2 Klein 4B</td><td>Самая дешёвая и быстрая — идеальна для черновиков и итераций</td><td>≈ $0.014</td></tr><tr><td class="font-weight-medium">Riverflow V2 Fast</td><td>Быстрая генерация для потоковых задач</td><td>≈ $0.02</td></tr><tr><td class="font-weight-medium">Nano Banana (Gemini 2.5 Flash Image)</td><td>Универсальная модель по умолчанию, хорошо понимает русский</td><td>≈ $0.04</td></tr><tr><td class="font-weight-medium">Seedream 4.5</td><td>Эстетика и детализация от ByteDance</td><td>≈ $0.04</td></tr><tr><td class="font-weight-medium">Recraft V4.1</td><td>Логотипы, графика, высокая эстетика</td><td>≈ $0.04</td></tr><tr><td class="font-weight-medium">Recraft V4.1 Utility</td><td>Мокапы и продуктовые сцены</td><td>≈ $0.04</td></tr><tr><td class="font-weight-medium">Grok Imagine (xAI)</td><td>Фотореализм высокого качества</td><td>≈ $0.06</td></tr><tr><td class="font-weight-medium">FLUX.2 Flex</td><td>Типографика, детали, точное следование промпту</td><td>≈ $0.06</td></tr><tr><td class="font-weight-medium">Nano Banana 2 (Gemini 3.1 Flash Image)</td><td>Свежая модель Google — быстро и качественно</td><td>≈ $0.07</td></tr><tr><td class="font-weight-medium">Nano Banana Pro (Gemini 3 Image)</td><td>Сложные сцены и мультимодальные сценарии</td><td>≈ $0.15</td></tr><tr><td class="font-weight-medium">Riverflow V2 Pro</td><td>Идеальный текст на картинке, максимум контроля</td><td>≈ $0.15</td></tr><tr><td class="font-weight-medium">GPT-5.4 Image 2</td><td>Флагман OpenAI: генерация и редактирование</td><td>≈ $0.20</td></tr><tr><td class="font-weight-medium">Recraft V4.1 Pro Vector</td><td>Векторная графика (SVG) — логотипы без потери качества</td><td>≈ $0.30</td></tr><!--]--></tbody><!--]--></table></div><!----></div><h2 class="text-h5 font-weight-bold mb-3"> Структура эффективного промпта </h2><p class="text-body-1 mb-4"> Качество изображения напрямую зависит от промпта. Чем точнее вы опишете желаемый результат, тем лучше будет итог. Вот оптимальная структура: </p><div class="v-list v-theme--defaultTheme v-list--density-default v-list--one-line mb-6" style="" tabindex="0" role="list"><!--[--><div class="v-list-item v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-check-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Субъект</div><div class="v-list-item-subtitle" style="">Что именно должно быть изображено: персонаж, объект, животное, пейзаж. Чем конкретнее, тем лучше.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-check-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Контекст и окружение</div><div class="v-list-item-subtitle" style="">Где происходит действие: интерьер, улица, студия, лес, офис. Укажите время суток и погоду, если важно.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-check-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Стиль</div><div class="v-list-item-subtitle" style="">Фотореализм, 3D-рендер, иллюстрация, акварель, минимализм, ретро, аниме, пиксель-арт. Это определяет визуальный язык.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-check-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Технические параметры</div><div class="v-list-item-subtitle" style="">Формат кадра (портрет, пейзаж, квадрат), соотношение сторон (16:9, 1:1), качество (высокое разрешение), освещение.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-default v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-check-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Настроение и атмосфера</div><div class="v-list-item-subtitle" style="">Весёлый, мрачный, вдохновляющий, профессиональный. Это влияет на цветовую палитру и композицию.</div><!----></div><!----></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Редактирование и слияние картинок </h2><p class="text-body-1 mb-4"> Режим «Редактирование / слияние картинок» принимает от 1 до 3 изображений и текстовую инструкцию — подробный разбор с примерами «до/после» есть в отдельном гайде «<a href="/guides/photo-editing" class="text-decoration-underline"> Отредактировать фото нейросетью онлайн </a>». Типичные сценарии: </p><div class="v-list v-theme--defaultTheme v-list--density-comfortable v-list--one-line mb-6" style="" tabindex="0" role="list"><!--[--><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-image-edit-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Замена фона</div><div class="v-list-item-subtitle" style="">Загрузите фото товара и напишите: «убери фон, поставь товар на белый студийный фон с мягкой тенью».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-image-multiple-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Слияние нескольких фото</div><div class="v-list-item-subtitle" style="">Загрузите 2–3 картинки и опишите, как их объединить: «помести персонажа с первой картинки в интерьер со второй».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-palette-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Смена стиля</div><div class="v-list-item-subtitle" style="">«Преврати это фото в акварельную иллюстрацию» или «сделай в стиле аниме».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-auto-fix mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Точечные правки</div><div class="v-list-item-subtitle" style="">«Добавь солнцезащитные очки», «сделай небо закатным», «убери лишних людей на заднем плане».</div><!----></div><!----></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Лучшие практики генерации </h2><div class="v-list v-theme--defaultTheme v-list--density-comfortable v-list--one-line mb-6" style="" tabindex="0" role="list"><!--[--><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-star-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Итерации по одному-двум параметрам</div><div class="v-list-item-subtitle" style="">Меняйте только стиль или композицию отдельно. Если менять всё сразу, сложно понять, что именно сработало.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-star-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Начните с простого, потом добавляйте детали</div><div class="v-list-item-subtitle" style="">Сначала получите базовый результат, затем уточняйте: «добавь блики», «сделай фон темнее», «измени ракурс».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-star-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Используйте негативные промпты</div><div class="v-list-item-subtitle" style="">Укажите, чего НЕ должно быть: «без текста, без водяных знаков, без искажений».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-star-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Начинайте с дешёвой модели</div><div class="v-list-item-subtitle" style="">Отработайте промпт на FLUX.2 Klein или Riverflow Fast, а финальный вариант сгенерируйте премиальной моделью.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-star-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Сохраняйте удачные промпты</div><div class="v-list-item-subtitle" style="">Ведите библиотеку рабочих промптов — это ускоряет работу в будущем.</div><!----></div><!----></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Типичные ошибки и как их избежать </h2><div class="v-list v-theme--defaultTheme v-list--density-comfortable v-list--one-line mb-8" style="" tabindex="0" role="list"><!--[--><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-alert-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Размытые описания</div><div class="v-list-item-subtitle" style="">Ошибка: «сделай красивую картинку». Решение: укажите конкретный субъект, стиль, цвета, ракурс.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-alert-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Слишком длинный промпт</div><div class="v-list-item-subtitle" style="">Ошибка: перечисление 20+ деталей. Решение: 5-7 ключевых элементов, остальное добавляйте итеративно.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-alert-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Не та модель под задачу</div><div class="v-list-item-subtitle" style="">Ошибка: генерировать логотип фотореалистичной моделью. Решение: для логотипов и векторной графики — Recraft, для фото — Grok Imagine или Seedream.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-comfortable v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-alert-circle-outline mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="comfortable"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Ожидание идеала с первой попытки</div><div class="v-list-item-subtitle" style="">Решение: сгенерируйте несколько вариантов, выберите лучший и дорабатывайте его в режиме редактирования.</div><!----></div><!----></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Как создать логотип с помощью нейросети </h2><p class="text-body-1 mb-4"> Генерация логотипов — популярный кейс для малого бизнеса. Вот пошаговый подход: </p><div class="v-list v-theme--defaultTheme v-list--density-compact v-list--one-line mb-6" style="" tabindex="0" role="list"><!--[--><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-1-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Опишите бренд</div><div class="v-list-item-subtitle" style="">Название, отрасль, ценности, целевая аудитория. Пример: «Эко-ферма, натуральные продукты, для семьи».</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-2-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Выберите стиль</div><div class="v-list-item-subtitle" style="">Минимализм, классический, современный, игривый. Это определит форму, шрифт и цвета.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-3-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Генерируйте варианты</div><div class="v-list-item-subtitle" style="">Используйте Recraft V4.1 — модель специализируется на логотипах и графике. Наш пример с эко-фермой выше сгенерирован именно ей. Для масштабируемого SVG возьмите Recraft V4.1 Pro Vector.</div><!----></div><!----></div><div class="v-list-item v-theme--defaultTheme v-list-item--density-compact v-list-item--one-line rounded-0 v-list-item--variant-text" style="" role="listitem"><!--[--><!----><span class="v-list-item__underlay"></span><!--]--><div class="v-list-item__prepend"><!--[--><!----><i class="mdi-numeric-4-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="compact"></i><!--]--><div class="v-list-item__spacer"></div></div><div class="v-list-item__content" data-no-activator><div class="v-list-item-title" style="">Доработайте в редакторе</div><div class="v-list-item-subtitle" style="">AI-генерация — это основа. Доработайте в Figma или Illustrator: шрифты, пропорции, цвета.</div><!----></div><!----></div><!--]--></div><h2 class="text-h5 font-weight-bold mb-3"> Сколько это стоит </h2><p class="text-body-1 mb-4"> Оплата — за каждую сгенерированную картинку по тарифу выбранной модели, деньги списываются с баланса. Самые доступные модели (FLUX.2 Klein, Riverflow Fast) стоят буквально копейки, премиальные (GPT-5.4 Image, Recraft Pro Vector) — заметно дороже. Вход на сервис — через Telegram, бесплатно и без VPN. Для генерации нужен положительный баланс. </p><div class="v-alert v-theme--defaultTheme text-warning v-alert--density-default v-alert--variant-tonal mb-8" style="" role="alert"><!--[--><!----><span class="v-alert__underlay"></span><!--]--><!----><div class="v-alert__prepend"><i class="mdi-alert-circle mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true" density="default"></i></div><div class="v-alert__content"><!----><!----><!--[--><strong>Важно:</strong> изображения, сгенерированные нейросетями, могут быть защищены авторским правом в зависимости от модели и юрисдикции. Обычно сгенерированные изображения можно использовать в личных и маркетинговых целях, но нельзя перепродавать как «оригинальное произведение искусства». <!--]--></div><!----><!----></div><div class="text-center"><a href="/chat" class="v-btn v-theme--defaultTheme text-secondary v-btn--density-default v-btn--size-large v-btn--variant-outlined" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Сгенерировать картинку в чате <!--]--><!--]--></span><!----><!----></a></div><h2 class="text-h5 font-weight-bold mb-3"> Частые вопросы </h2><div class="v-expansion-panels v-theme--defaultTheme v-expansion-panels--variant-accordion mb-8" style=""><!--[--><!--[--><div class="v-expansion-panel" style=""><div class="v-expansion-panel__shadow"></div><!--[--><button class="v-expansion-panel-title" style="" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span><!--[-->Можно ли сгенерировать картинку бесплатно?<!--]--><!--[--><span class="v-expansion-panel-title__icon"><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!--]--></button><div class="v-expansion-panel-text" style="display:none;"><!----></div><!----><!--]--></div><div class="v-expansion-panel" style=""><div class="v-expansion-panel__shadow"></div><!--[--><button class="v-expansion-panel-title" style="" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span><!--[-->Какую модель выбрать?<!--]--><!--[--><span class="v-expansion-panel-title__icon"><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!--]--></button><div class="v-expansion-panel-text" style="display:none;"><!----></div><!----><!--]--></div><div class="v-expansion-panel" style=""><div class="v-expansion-panel__shadow"></div><!--[--><button class="v-expansion-panel-title" style="" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span><!--[-->Нужен ли VPN или зарубежная карта?<!--]--><!--[--><span class="v-expansion-panel-title__icon"><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!--]--></button><div class="v-expansion-panel-text" style="display:none;"><!----></div><!----><!--]--></div><div class="v-expansion-panel" style=""><div class="v-expansion-panel__shadow"></div><!--[--><button class="v-expansion-panel-title" style="" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span><!--[-->Можно ли задать соотношение сторон и отредактировать своё фото?<!--]--><!--[--><span class="v-expansion-panel-title__icon"><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!--]--></button><div class="v-expansion-panel-text" style="display:none;"><!----></div><!----><!--]--></div><div class="v-expansion-panel" style=""><div class="v-expansion-panel__shadow"></div><!--[--><button class="v-expansion-panel-title" style="" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span><!--[-->Можно ли использовать картинки в коммерческих целях?<!--]--><!--[--><span class="v-expansion-panel-title__icon"><i class="mdi-chevron-down mdi v-icon notranslate v-theme--defaultTheme v-icon--size-default" style="" aria-hidden="true"></i></span><!--]--></button><div class="v-expansion-panel-text" style="display:none;"><!----></div><!----><!--]--></div><!--]--><!--]--></div><hr class="v-divider v-theme--defaultTheme my-6" style="border-style:solid;" aria-orientation="horizontal" role="separator"><div class="d-flex flex-wrap ga-2"><a href="/guides/neural-networks" class="v-btn v-theme--defaultTheme text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Читать также: Нейросети онлайн <!--]--><!--]--></span><!----><!----></a><a href="/guides/video-generator" class="v-btn v-btn--elevated v-theme--defaultTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Следующая страница гайда: Генерация видео <!--]--><!--]--></span><!----><!----></a></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div></div></div><!--]--></div><footer class="v-footer v-theme--defaultTheme bg-secondary d-flex flex-column pt-6 pb-4" style="height:auto;" data-v-9c0b1995><div class="v-container v-locale--is-ltr py-0" style="" data-v-9c0b1995><div class="v-row v-row--dense" style="" data-v-9c0b1995><!--[--><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>AI-инструменты</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/photo" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Фото-инструменты ИИ</a><a href="/photo/primerka" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Виртуальная примерка одежды</a><a href="/photo/predmetka" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Предметная съёмка товара</a><a href="/logo" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Создать логотип</a><a href="/music" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Создать песню</a><!--]--></div></div><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>Сервис</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/chat" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Чат с нейросетями</a><a href="/pricing" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Тарифы и цены</a><a href="/dietolog" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Подсчёт калорий ИИ</a><a href="/news" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Новости ИИ</a><!--]--></div></div><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>Гайды</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a aria-current="page" href="/guides/image-generator" class="router-link-active router-link-exact-active footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Генерация изображений</a><a href="/guides/video-generator" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Генерация видео</a><a href="/guides/music-generator" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Генерация музыки</a><a href="/guides/neyroseti-bez-vpn" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Нейросети без VPN</a><a href="/guides" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Все гайды и инструкции</a><!--]--></div></div><div class="v-col-sm-6 v-col-md-3 v-col-12" style="" data-v-9c0b1995><div class="text-subtitle-2 text-white mb-2" data-v-9c0b1995>О сервисе</div><div class="d-flex flex-column ga-1" data-v-9c0b1995><!--[--><a href="/about" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>О нас</a><a href="/offer" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Публичная оферта</a><a href="/privacy-policy" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Политика конфиденциальности</a><a href="/about#requisites" class="footer-link text-white text-decoration-none text-caption" data-v-9c0b1995>Реквизиты и контакты</a><!--]--></div></div><!--]--></div><div class="text-caption text-white text-center mt-5 footer-copy" data-v-9c0b1995> © GPT Chat Беларусь — нейросети без VPN в Беларуси и России </div></div></footer><!--]--></main><!--[--><!----><!----><!--]--><span data-v-9c0b1995 data-v-47c2d5d6></span><!--[--><!----><!----><!--]--><!--[--><!----><!----><!--]--><!--]--></div></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/guides/image-generator/_payload.json?0b6268ed-5d4d-4043-b09b-f9d31e3293c6">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"pinia":8,"prerenderedAt":31},["Reactive",2],{},["Set"],["ShallowReactive",5],{},true,"/guides/image-generator",["Reactive",9],{"auth":10,"billing":13,"token":25,"pushPrompt":27},{"user":-1,"loggedIn":11,"strategy":12},false,"local",{"balance":14,"isLoading":18,"isLoaded":20,"expensesLoaded":21,"monthlyExpenseList":22},["Ref",15],["Reactive",16],{"byn":17,"rub":17,"usd":17},0,["EmptyRef",19],"false",["EmptyRef",19],["EmptyRef",19],["Ref",23],["Reactive",24],[],{"apiKey":26},null,{"isOpen":28,"taskType":29},["EmptyRef",19],["Ref",30],"generic",1784833090011]</script>
+<script>window.__NUXT__={};window.__NUXT__.config={public:{apiBase:"https://api.gpt-chat.by/api",telegramBotID:"7714752762",vapidPublicKey:""},app:{baseURL:"/",buildId:"0b6268ed-5d4d-4043-b09b-f9d31e3293c6",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>

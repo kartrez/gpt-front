@@ -1,0 +1,52 @@
+# Nuxt static site (generate → .output/public)
+# Аналог nginx prod: try_files + отдельная логика для /news/
+
+Options -MultiViews -Indexes +FollowSymLinks
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+# --- Кэширование (НЕ no-store на всё подряд) ---
+<IfModule mod_headers.c>
+    # Хэшированные бандлы — можно кэшировать год
+    SetEnvIf Request_URI "^/_nuxt/" LONG_CACHE
+    Header set Cache-Control "public, max-age=31536000, immutable" env=LONG_CACHE
+
+    # HTML — всегда перепроверять (как expires -1 в nginx)
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# Статика _nuxt — без rewrite
+RewriteRule ^_nuxt/ - [L]
+
+# Fallback 404 — не переписывать (иначе ErrorDocument уходит в 404.html/index.html → 500)
+RewriteRule ^404\.html$ - [L]
+
+# Реальные файлы
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Реальные каталоги (index.html через DirectoryIndex)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /news/slug — только пререндер; несуществующий slug → 404 через ErrorDocument
+RewriteCond %{DOCUMENT_ROOT}/news/$1/index.html -f
+RewriteRule ^news/([^/]+)/?$ news/$1/index.html [L]
+
+# Остальные маршруты: /path → /path/index.html (только если файл есть)
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Страница 404 (должна лежать в корне после nuxt generate)
+ErrorDocument 404 /404.html
+
+# Запрет доступа к скрытым файлам (.env, .git и т.п.)
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\.">
+        Require all denied
+    </FilesMatch>
+</IfModule>
