@@ -1,0 +1,1 @@
+import{d as o,C as s,N as n,c,L as r,a as _}from"./D8GayML4.js";const d=o({__name:"[token]",async setup(p){let e,t;const a=s();return[e,t]=n(()=>r(`/studio/watch/${a.params.token}`,{})),await e,t(),(i,m)=>(_(),c("div"))}});export{d as default};
