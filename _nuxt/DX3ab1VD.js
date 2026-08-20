@@ -1,0 +1,1 @@
+import{d as o,G as s,N as n,g as r,L as c,o as _}from"./DUnXxUz-.js";const d=o({__name:"[token]",async setup(p){let e,t;const a=s();return[e,t]=n(()=>c(`/studio/watch/${a.params.token}`,{})),await e,t(),(i,m)=>(_(),r("div"))}});export{d as default};
