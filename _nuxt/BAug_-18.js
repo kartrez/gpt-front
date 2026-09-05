@@ -1,0 +1,1 @@
+import{_}from"./BhjewKOC.js";import{_ as r,r as o,c as p,o as m,w as e,e as t,a6 as l}from"./DdYJdR3W.js";import"./CTwLY0S1.js";const d={};function f(n,i){const c=o("v-main"),a=_,s=o("v-app");return m(),p(s,{class:"vscode-theme"},{default:e(()=>[t(c,null,{default:e(()=>[l(n.$slots,"default")]),_:3}),t(a)]),_:3})}const h=r(d,[["render",f]]);export{h as default};
