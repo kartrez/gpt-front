@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <!-- Тайл фотомотивов для фона страниц обработки фото (/photo, /guides/photo-editing).
+       Цвет — брендовый secondary (#75ac9d); прозрачностью управляет CSS на слое-подложке.
+       Линейные иконки: камера, картинка-пейзаж, волшебная палочка (ИИ-правка), рамка кадрирования. -->
+  <g fill="none" stroke="#75ac9d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Камера (слева сверху) -->
+    <g transform="translate(34,40)">
+      <rect x="2" y="16" width="78" height="52" rx="9"/>
+      <path d="M27 16 l5 -11 h18 l5 11"/>
+      <circle cx="41" cy="42" r="14"/>
+      <circle cx="68" cy="28" r="2.6" fill="#75ac9d" stroke="none"/>
+    </g>
+
+    <!-- Картинка-пейзаж (справа сверху) -->
+    <g transform="translate(206,58)">
+      <rect x="0" y="0" width="86" height="66" rx="8"/>
+      <circle cx="24" cy="22" r="8"/>
+      <path d="M5 60 L32 33 L48 49 L62 35 L83 57"/>
+    </g>
+
+    <!-- Волшебная палочка (слева снизу) -->
+    <g transform="translate(58,224)">
+      <line x1="4" y1="76" x2="42" y2="38"/>
+    </g>
+
+    <!-- Рамка кадрирования (справа снизу) -->
+    <g transform="translate(256,236)">
+      <path d="M14 2 V54 H66"/>
+      <path d="M2 16 H54 V68"/>
+    </g>
+  </g>
+
+  <!-- Искры палочки — сплошной заливкой -->
+  <g transform="translate(58,224)" fill="#75ac9d">
+    <path d="M50 6 l4.5 13 l13 4.5 l-13 4.5 l-4.5 13 l-4.5 -13 l-13 -4.5 l13 -4.5 z"/>
+    <path d="M16 2 l2.5 7.5 l7.5 2.5 l-7.5 2.5 l-2.5 7.5 l-2.5 -7.5 l-7.5 -2.5 l7.5 -2.5 z"/>
+  </g>
+</svg>
