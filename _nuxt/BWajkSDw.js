@@ -1,0 +1,1 @@
+import{d as r,I as c,O as o,g as l,L as s,o as u}from"./BUlvbgBn.js";const m=r({__name:"dialogs",async setup(i){let e,t;const a=c(),n=typeof a.query.agent=="string"?a.query.agent:null;return n?([e,t]=o(()=>s(`/consult/${n}?tab=dialogs`,{replace:!0})),await e,t()):([e,t]=o(()=>s("/consult",{replace:!0})),await e,t()),(_,p)=>(u(),l("div"))}});export{m as default};

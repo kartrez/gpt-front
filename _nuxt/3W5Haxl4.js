@@ -1,0 +1,1 @@
+import{d as r,I as c,O as n,g as u,L as o,o as l}from"./BUlvbgBn.js";const f=r({__name:"requests",async setup(_){let e,t;const a=c(),s=typeof a.query.agent=="string"?a.query.agent:null;return s?([e,t]=n(()=>o(`/consult/${s}?tab=requests`,{replace:!0})),await e,t()):([e,t]=n(()=>o("/consult",{replace:!0})),await e,t()),(p,i)=>(l(),u("div"))}});export{f as default};

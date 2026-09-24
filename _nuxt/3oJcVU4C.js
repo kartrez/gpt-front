@@ -1,0 +1,1 @@
+import{u as l}from"./BFYulU4C.js";let e=null;function a(){const o=l("login-dialog-requested",()=>!1);function s(){if(e!==null){const n=e;return new Promise(t=>{e=u=>{n(u),t(u)}})}return new Promise(n=>{e=n,o.value=!0})}function i(n){o.value=!1;const t=e;e=null,t?.(n)}return{isLoginRequested:o,openLogin:s,settleLogin:i}}export{a as u};
