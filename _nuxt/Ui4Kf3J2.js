@@ -1,0 +1,1 @@
+const s=5,n=[1,2,3,4,5,6,7,8,10,12,15];function i(r){return typeof r=="number"&&Number.isFinite(r)&&r>0?Math.round(r):5}function o(r){const t=r?.supportedDurations;return Array.isArray(t)&&t.length>0?[...t]:[...n]}function u(r){return o(r)[0]??5}export{s as D,n as F,o as d,u as f,i as s};

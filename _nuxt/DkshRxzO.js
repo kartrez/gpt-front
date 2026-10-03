@@ -1,0 +1,1 @@
+import"./F6_eFRJR.js";const s=globalThis.setInterval;export{s};

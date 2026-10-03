@@ -1,0 +1,100 @@
+# Nuxt static site (generate → .output/public)
+# Аналог nginx prod: try_files + отдельная логика для /news/
+
+Options -MultiViews -Indexes +FollowSymLinks
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+# --- Кэширование (НЕ no-store на всё подряд) ---
+<IfModule mod_headers.c>
+    # Хэшированные бандлы — можно кэшировать год
+    SetEnvIf Request_URI "^/_nuxt/" LONG_CACHE
+    Header set Cache-Control "public, max-age=31536000, immutable" env=LONG_CACHE
+
+    # HTML — всегда перепроверять (как expires -1 в nginx)
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# --- Сжатие ---
+# Замер 25.08.2026: прод отдаёт ТОЛЬКО brotli. Клиент без br получает главную
+# несжатой — 134 КБ вместо 15,5 (×8,6), входной бандл 778 КБ вместо 231 (×3,4).
+# Хуже: заголовка Vary: Accept-Encoding нет нигде, поэтому промежуточный кэш
+# может отдать brotli-ответ клиенту, который его не понимает — это уже не про
+# скорость, а про сломанную страницу.
+#
+# ⚠️ НА ПРОДЕ ЭТОТ БЛОК НЕ РАБОТАЕТ, и снести его нельзя по другой причине.
+# Проверено после деплоя 25.08: статику на gpt-chat.by отдаёт nginx Plesk
+# (`server: nginx`, `x-powered-by: PleskLin`) напрямую, до Apache запрос не
+# доходит — поэтому brotli есть, gzip нет, Vary нет, и .htaccess на это не
+# влияет. Apache виден только на маршрутах без расширения: 301 на /klepa и 404
+# на /images/ из этого же файла работают. Чинить сжатие надо в панели Plesk
+# (Apache & nginx Settings → директивы nginx: gzip_types + add_header Vary),
+# доступ туда — только под владельцем. Блок оставлен: он корректен и включится
+# сам, если отдачу статики nginx-ом когда-нибудь выключат.
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml application/manifest+json
+</IfModule>
+
+<IfModule mod_headers.c>
+    # merge, а не append: не плодит «Accept-Encoding, Accept-Encoding», если
+    # заголовок уже выставил mod_deflate или апстрим, отдающий brotli.
+    <FilesMatch "\.(html|css|js|mjs|json|xml|svg|txt|webmanifest)$">
+        Header merge Vary Accept-Encoding
+    </FilesMatch>
+</IfModule>
+
+# Статика _nuxt — без rewrite
+RewriteRule ^_nuxt/ - [L]
+
+# Fallback 404 — не переписывать (иначе ErrorDocument уходит в 404.html/index.html → 500)
+RewriteRule ^404\.html$ - [L]
+
+# Раздел Klepa переехал на свой поддомен (OpenSpec move-klepa-to-subdomain, 24.09.2026):
+# каждый старый адрес — ОДНИМ 301 на тот же slug поддомена, обзор — на его главную.
+# Стоит до «Реальных файлов»: даже забытый на проде klepa/*/index.html не отдастся дублем.
+# Строка запроса (UTM) переносится сама — флага QSD нет. Сторож — tests/klepaSubdomain.test.mjs.
+RewriteRule ^klepa(/|/overview(/index\.html)?/?)?$ https://klepa.gpt-chat.by/ [R=301,L]
+RewriteRule ^klepa/([^/]+)(/index\.html)?/?$ https://klepa.gpt-chat.by/$1/ [R=301,L]
+RewriteRule ^klepa/(.+)$ https://klepa.gpt-chat.by/$1 [R=301,L]
+
+# Гайды по вайбкодингу переехали на витрину Klepa (OpenSpec klepa-site-seo-basics, 03.10.2026):
+# здесь они не получали показов. Обе страницы — одним 301 на статью витрины. Сторож — tests/vibeCodingMove.test.mjs.
+RewriteRule ^guides/vibe-coding(-start)?(/index\.html)?/?$ https://klepa.gpt-chat.by/vibe-coding/ [R=301,L]
+
+# Реальные файлы
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Прочие каталоги без index.html (/images, /files и т.п.) — честный 404 вместо 403.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
+RewriteRule ^ - [R=404,L]
+
+# Реальные каталоги (index.html через DirectoryIndex)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /news/slug — только пререндер; несуществующий slug → 404 через ErrorDocument
+RewriteCond %{DOCUMENT_ROOT}/news/$1/index.html -f
+RewriteRule ^news/([^/]+)/?$ news/$1/index.html [L]
+
+# Остальные маршруты: /path → /path/index.html (только если файл есть)
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Страница 404 (должна лежать в корне после nuxt generate)
+ErrorDocument 404 /404.html
+
+# Запрет доступа к скрытым файлам (.env, .git и т.п.)
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\.">
+        Require all denied
+    </FilesMatch>
+</IfModule>

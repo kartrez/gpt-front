@@ -1,0 +1,1 @@
+import{E as r}from"./F6_eFRJR.js";function o(){const t=r.getItem("auth._token.local")||"",e=t.startsWith("Bearer ")?t.substring(7):t;if(!e||e.length<10)return!1;try{return JSON.parse(atob(e.split(".")[1])).roles?.includes("ROLE_ADMIN")===!0}catch{return!1}}export{o as h};
