@@ -1,0 +1,29 @@
+{
+  "name": "GPT Chat Беларусь",
+  "short_name": "GPT Chat",
+  "description": "GPT-чат в Беларуси бесплатно, без лимитов, без подключения VPN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#343541",
+  "theme_color": "#75ac9d",
+  "orientation": "portrait-primary",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

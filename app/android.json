@@ -1,0 +1,10 @@
+{
+  "versionCode": 2,
+  "versionName": "0.2.0",
+  "url": "https://gpt-chat.by/app/gpt-chat.apk",
+  "notes": [
+    "Пополнение баланса картой прямо в приложении, без перехода на сайт",
+    "Из меню убраны ссылки на разделы сайта"
+  ],
+  "minSupportedVersionCode": 1
+}
