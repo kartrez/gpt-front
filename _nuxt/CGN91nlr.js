@@ -1,0 +1,1 @@
+const s=5,M=1e4,N=[10,20,50,100,200],A=[10,20,30],e=20;function r(t){const n=Number(t);return Number.isFinite(n)?n<5?"Минимум 5 BYN":n>1e4?"Максимум 10000 BYN":!0:"Введите сумму"}function u(t){return r(t)===!0}export{e as D,M,N as P,A as Q,s as a,u as i,r as v};
