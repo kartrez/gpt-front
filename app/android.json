@@ -1,0 +1,9 @@
+{
+  "versionCode": 12,
+  "versionName": "0.4.8",
+  "url": "https://gpt-chat.by/app/gpt-chat.apk",
+  "notes": [
+    "Долгие разговоры с Claude Opus и Fable стали дешевле: начало разговора теперь помнится час, а не 5 минут"
+  ],
+  "minSupportedVersionCode": 1
+}
