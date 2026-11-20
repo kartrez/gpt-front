@@ -1,0 +1,1 @@
+function n(e){return e==null?"":String(e).trim()}function i(e){const o=n(e?.username),t=n(e?.telegramExternalId),a=n(e?.googleDisplayName),r=n(e?.email);return t?{primary:o||"—",secondary:t}:{primary:a||r||"—",secondary:a&&r?r:""}}export{i as a};
