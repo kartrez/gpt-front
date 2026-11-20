@@ -32,23 +32,22 @@ self.addEventListener('push', (event) => {
 
 self.addEventListener('notificationclick', (event) => {
   event.notification.close()
-  const targetUrl = (event.notification.data && event.notification.data.url) || '/'
+  const target = new URL(event.notification.data?.url || '/', self.location.origin)
+  if (!['http:', 'https:'].includes(target.protocol)) { return }
 
-  event.waitUntil(
-    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
-      for (const client of clientList) {
-        // Уже открытая вкладка сайта — переиспользуем её.
-        if ('focus' in client) {
-          if ('navigate' in client) {
-            try { client.navigate(targetUrl) } catch (e) { /* кросс-origin — игнорируем */ }
-          }
-          return client.focus()
+  event.waitUntil((async () => {
+    if (target.origin === self.location.origin) {
+      const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true })
+      const client = clients.find(item => 'navigate' in item && 'focus' in item)
+      if (client) {
+        try {
+          await client.navigate(target.href)
+          return await client.focus()
+        } catch {
+          // Вкладка могла закрыться во время перехода.
         }
       }
-      if (self.clients.openWindow) {
-        return self.clients.openWindow(targetUrl)
-      }
-      return undefined
-    })
-  )
+    }
+    return self.clients.openWindow(target.href)
+  })())
 })
