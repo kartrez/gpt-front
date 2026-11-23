@@ -1,0 +1,1 @@
+import{_ as o,g as s,o as n,as as t}from"./pGKwzw4f.js";const c={},r={class:"guide-section bg-surface border rounded-xl pa-5 pa-md-6 mb-6 mb-md-8"};function _(e,a){return n(),s("section",r,[t(e.$slots,"default",{},void 0,!0)])}const m=o(c,[["render",_],["__scopeId","data-v-08d8b597"]]);export{m as _};

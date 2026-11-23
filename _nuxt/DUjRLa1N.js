@@ -1,0 +1,1 @@
+import{r as u}from"./DWx0LUbf.js";import{j as n}from"./D4ArqD4v.js";function a(t,i){const e=n(!1),r=n(null);let f=null;function s(o){o!==void 0&&(f=o),r.value=u(t(),i(),f),e.value=!0}return{isOfferOpen:e,offerPrice:r,openOffer:s}}export{a as u};

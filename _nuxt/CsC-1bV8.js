@@ -1,0 +1,1 @@
+import{_ as o,g as s,o as n,as as t}from"./C66xCFei.js";const c={},r={class:"guide-section bg-surface border rounded-xl pa-5 pa-md-6 mb-6 mb-md-8"};function a(e,_){return n(),s("section",r,[t(e.$slots,"default",{},void 0,!0)])}const f=o(c,[["render",a],["__scopeId","data-v-a86ef7e6"]]);export{f as _};
